@@ -1,0 +1,141 @@
+# 
+
+# diff all
+
+# version
+# Betaflight / STM32F405 (S405) 4.2.0 Jun 14 2020 / 03:04:22 (8f2d21460) MSP API: 1.43
+# config: manufacturer_id: AIRB, board_name: OMNIBUSF4SD, version: 3a35e73b, date: 2019-09-30T05:46:12Z
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name OMNIBUSF4SD
+manufacturer_id AIRB
+mcu_id 003b00294d4d50032036394e
+signature 
+
+# resources
+resource MOTOR 1 B01
+resource MOTOR 2 A03
+resource MOTOR 3 B00
+resource MOTOR 5 NONE
+resource MOTOR 6 NONE
+resource SONAR_TRIGGER 1 NONE
+resource SONAR_ECHO 1 NONE
+
+# feature
+feature GPS
+feature TELEMETRY
+
+# serial
+serial 0 2 115200 57600 0 115200
+serial 2 64 115200 57600 0 115200
+serial 5 0 115200 57600 0 115200
+
+# aux
+aux 0 0 1 1850 2100 0 0
+aux 1 1 5 1550 2100 0 0
+aux 2 46 0 1950 2100 0 0
+aux 3 13 2 1825 2100 0 0
+aux 4 35 6 1850 2100 0 0
+aux 5 36 2 1775 2100 0 0
+
+# master
+set acc_calibration = 29,81,-300,1
+set mag_hardware = NONE
+set min_check = 1000
+set rssi_channel = 16
+set rc_smoothing_derivative_type = PT1
+set serialrx_provider = FPORT
+set serialrx_halfduplex = ON
+set blackbox_p_ratio = 64
+set motor_pwm_protocol = DSHOT300
+set failsafe_throttle = 1100
+set failsafe_procedure = GPS-RESCUE
+set bat_capacity = 1800
+set gps_provider = UBLOX
+set gps_sbas_mode = AUTO
+set gps_auto_baud = ON
+set gps_ublox_use_galileo = ON
+set gps_set_home_point_once = ON
+set gps_rescue_angle = 30
+set gps_rescue_initial_alt = 40
+set gps_rescue_descent_dist = 50
+set gps_rescue_ground_speed = 1000
+set gps_rescue_ascend_rate = 100
+set gps_rescue_descend_rate = 100
+set gps_rescue_throttle_hover = 1300
+set gps_rescue_allow_arming_without_fix = ON
+set deadband = 3
+set yaw_deadband = 3
+set pid_process_denom = 4
+set osd_warn_rssi = ON
+set osd_cap_alarm = 1600
+set osd_vbat_pos = 354
+set osd_rssi_pos = 2401
+set osd_flymode_pos = 2105
+set osd_throttle_pos = 2081
+set osd_crosshairs_pos = 237
+set osd_current_pos = 2455
+set osd_mah_drawn_pos = 2424
+set osd_gps_lon_pos = 2065
+set osd_gps_lat_pos = 2049
+set osd_gps_sats_pos = 2438
+set osd_home_dir_pos = 2093
+set osd_home_dist_pos = 2095
+set osd_warnings_pos = 14666
+set osd_avg_cell_voltage_pos = 2432
+set osd_battery_usage_pos = 0
+set osd_disarmed_pos = 2347
+set osd_stat_bbox = OFF
+set osd_stat_bb_no = OFF
+set debug_mode = GYRO_SCALED
+set gyro_1_align_yaw = 2700
+set gyro_rpm_notch_q = 800
+
+profile 0
+
+# profile 0
+set dyn_lpf_dterm_curve_expo = 6
+set vbat_sag_compensation = 100
+set feedforward_transition = 40
+set iterm_relax_cutoff = 10
+set yaw_lowpass_hz = 70
+set throttle_boost_cutoff = 10
+set ff_interpolate_sp = AVERAGED_3
+set ff_spike_limit = 55
+set ff_smooth_factor = 40
+set ff_boost = 0
+
+profile 1
+
+profile 2
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set thr_mid = 35
+set thr_expo = 40
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
+# 
